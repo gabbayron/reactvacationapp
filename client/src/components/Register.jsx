@@ -53,7 +53,7 @@ export default function Register({ history }) {
     const handleRegister = async (e) => {
         e.preventDefault()
         try {
-            let res = await fetch('http://localhost:1000/auth/register', {
+            let res = await fetch('/auth/register', {
                 method: 'POST',
                 body: JSON.stringify({ fname: capFirstLetter(fname), lname: capFirstLetter(lname), username, password }),
                 headers: { "content-type": "application/json" }

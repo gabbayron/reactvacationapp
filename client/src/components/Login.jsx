@@ -51,7 +51,7 @@ export default function Login({ history }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:1000/auth/login", {
+      let res = await fetch("/auth/login", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "content-type": "application/json" },
