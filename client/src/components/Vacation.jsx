@@ -58,7 +58,9 @@ const Vacation = ({
         newState[index].followers = followers
         setSearchedVacations(newState)
       }
-      setCounter(counter + 1)
+      setTimeout(() => {
+        setCounter(counter + 1)
+      }, 100);
     } catch (error) {
       throw error
     }
