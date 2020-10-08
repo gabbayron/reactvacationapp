@@ -18,12 +18,10 @@ router.get("/", verifyUser, async (req, res) => {
               (SELECT vacation_id FROM followers
               WHERE user_id = ?)
               order by start_date asc`
-    const [followedVacations, notFollowedVacations] = await Promise.all(
-      [
-        Query(q1, [req.user.id]),
-        Query(q2, [req.user.id])
-      ]
-    )
+
+    let followedVacations = await Query(q1, [req.user.id])
+    let notFollowedVacations = await Query(q2, [req.user.id])
+
     res.json({ followedVacations, notFollowedVacations });
   } catch (error) {
     throw error
