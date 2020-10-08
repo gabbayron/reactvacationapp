@@ -64,6 +64,7 @@ export default function Vacations() {
             headers: { Authorization: localStorage.token || sessionStorage.token }
           });
           let allVacations = await res.json();
+          console.log(allVacations)
           setAllVacations(allVacations)
           setNotFollowedVacations(allVacations.notFollowedVacations);
           setFollowedVacations(allVacations.followedVacations)
@@ -75,8 +76,6 @@ export default function Vacations() {
       }
     })();
   }, [counter, user.login, user.userid]);
-  console.group(followedVacations, 'followed')
-  console.group(notFollowedVacations, 'not followed')
   return (
     <React.Fragment>
       <CssBaseline />
