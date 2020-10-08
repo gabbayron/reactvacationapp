@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux';
 import LockIcon from '@material-ui/icons/Lock';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import { server } from '../config/index'
 
 
 
@@ -53,7 +54,7 @@ export default function Register({ history }) {
     const handleRegister = async (e) => {
         e.preventDefault()
         try {
-            let res = await fetch('/auth/register', {
+            let res = await fetch(server + '/auth/register', {
                 method: 'POST',
                 body: JSON.stringify({ fname: capFirstLetter(fname), lname: capFirstLetter(lname), username, password }),
                 headers: { "content-type": "application/json" }

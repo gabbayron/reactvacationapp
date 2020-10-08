@@ -15,6 +15,7 @@ import Collapse from "@material-ui/core/Collapse";
 import CardHeader from '@material-ui/core/CardHeader';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditVacationModal from "./EditVacationModal";
+import { server } from '../config/index'
 
 const Vacation = ({
   destination,
@@ -37,10 +38,10 @@ const Vacation = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  
+
   const handleFavoirte = async () => {
     try {
-      fetch(`/vacations/${id}`, {
+      fetch(server + `/vacations/${id}`, {
         method: "PUT",
         body: JSON.stringify({
           followers: following ? --followers : ++followers,
@@ -66,7 +67,7 @@ const Vacation = ({
 
   const handleDelete = async () => {
     try {
-      await fetch(`/vacations/${id}`, {
+      await fetch(server + `/vacations/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: localStorage.token || sessionStorage.token,

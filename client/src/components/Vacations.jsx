@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import Vacation from "./Vacation";
 import SearchInputs from "./SearchInputs";
 import AddVacationModal from '../components/AddVacationModal'
+import { server } from '../config/index'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -60,7 +61,7 @@ export default function Vacations() {
     (async () => {
       try {
         if (user.login) {
-          let res = await fetch(`/vacations`, {
+          let res = await fetch(server + `/vacations`, {
             headers: { Authorization: localStorage.token || sessionStorage.token }
           });
           let allVacations = await res.json();

@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux";
 import LockIcon from '@material-ui/icons/Lock';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import { server } from '../config/index'
 
 
 
@@ -51,13 +52,12 @@ export default function Login({ history }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("/auth/login", {
+      let res = await fetch(server + "/auth/login", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "content-type": "application/json" },
       });
       let data = await res.json();
-      console.log(data);
       if (data.error) {
         setError(data.msg);
         setTimeout(() => {
@@ -82,7 +82,6 @@ export default function Login({ history }) {
           payload: { id, role, username, fname, lname },
         });
         history.push("/vacations");
-        console.log('logged')
       }
     } catch (error) {
       throw error;

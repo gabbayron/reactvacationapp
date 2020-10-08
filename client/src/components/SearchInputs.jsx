@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { Badge } from "@material-ui/core";
 import moment from 'moment';
 import CheckIcon from '@material-ui/icons/Check';
+import { server } from '../config/index'
 
 export default function SearchInputs({
     setFollowedVacations,
@@ -27,7 +28,7 @@ export default function SearchInputs({
 
     const searchVacation = async () => {
         try {
-            let res = await fetch('/vacations/search', {
+            let res = await fetch(server+ '/vacations/search', {
                 method: "POST",
                 headers: {
                     Authorization: localStorage.token || sessionStorage.token,
