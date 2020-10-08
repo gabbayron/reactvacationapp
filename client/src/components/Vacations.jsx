@@ -69,6 +69,7 @@ export default function Vacations() {
           setNotFollowedVacations(allVacations.notFollowedVacations);
           setFollowedVacations(allVacations.followedVacations)
           setLiked(allVacations.followedVacations.map(vacation => vacation.id))
+          console.log('usefect called')
         }
         return null;
       } catch (error) {
