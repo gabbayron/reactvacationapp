@@ -60,7 +60,7 @@ export default function Vacations() {
     (async () => {
       try {
         if (user.login) {
-          let res = await fetch(  `vacations`, {
+          let res = await fetch(`vacations`, {
             headers: { Authorization: localStorage.token || sessionStorage.token }
           });
           let allVacations = await res.json();
@@ -68,7 +68,6 @@ export default function Vacations() {
           setNotFollowedVacations(allVacations.notFollowedVacations);
           setFollowedVacations(allVacations.followedVacations)
           setLiked(allVacations.followedVacations.map(vacation => vacation.id))
-          console.log('usefect calleddd')
         }
         return null;
       } catch (error) {
@@ -76,7 +75,8 @@ export default function Vacations() {
       }
     })();
   }, [counter, user.login, user.userid]);
-
+  console.group(followedVacations, 'followed')
+  console.group(notFollowedVacations, 'not followed')
   return (
     <React.Fragment>
       <CssBaseline />

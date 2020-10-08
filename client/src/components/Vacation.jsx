@@ -52,14 +52,12 @@ const Vacation = ({
         },
       });
       if (setSearchedVacations) {
-        console.log('called from search like')
         let newState = [...serachedVacations]
         let update = serachedVacations.find(vacation => vacation.id === id)
         let index = serachedVacations.indexOf(update)
         newState[index].followers = followers
         setSearchedVacations(newState)
       }
-      console.log('called from outside of likes')
       setCounter(counter + 1)
     } catch (error) {
       throw error
