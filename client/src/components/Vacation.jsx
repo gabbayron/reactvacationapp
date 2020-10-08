@@ -119,8 +119,8 @@ const Vacation = ({
 
   return (
     <>
-      <Grid item xs={3} className={classes.card}>
-        <Card >
+      <Grid item xs={12} sm={6} md={3} >
+        <Card className={classes.card}>
           {user.role === "admin" ?
             <CardHeader style={{ justifyContent: 'space-around' }} action={
               <EditVacationModal country={country} price={price}
