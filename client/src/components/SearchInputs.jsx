@@ -27,7 +27,7 @@ export default function SearchInputs({
 
     const searchVacation = async () => {
         try {
-            let res = await fetch('http://localhost:1000/vacations/search', {
+            let res = await fetch('/vacations/search', {
                 method: "POST",
                 headers: {
                     Authorization: localStorage.token || sessionStorage.token,

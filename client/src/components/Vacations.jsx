@@ -60,7 +60,7 @@ export default function Vacations() {
     (async () => {
       try {
         if (user.login) {
-          let res = await fetch(`http://localhost:1000/vacations`, {
+          let res = await fetch(`/vacations`, {
             headers: { Authorization: localStorage.token || sessionStorage.token }
           });
           let allVacations = await res.json();

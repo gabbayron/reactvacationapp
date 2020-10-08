@@ -37,7 +37,7 @@ export default function AddVacationModal({ counter, setCounter }) {
 
     const handleClick = async () => {
         try {
-            await fetch('http://localhost:1000/vacations/add', {
+            await fetch('/vacations/add', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

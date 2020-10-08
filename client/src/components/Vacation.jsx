@@ -40,7 +40,7 @@ const Vacation = ({
   
   const handleFavoirte = async () => {
     try {
-      fetch(`http://localhost:1000/vacations/${id}`, {
+      fetch(`/vacations/${id}`, {
         method: "PUT",
         body: JSON.stringify({
           followers: following ? --followers : ++followers,
@@ -66,7 +66,7 @@ const Vacation = ({
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:1000/vacations/${id}`, {
+      await fetch(`/vacations/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: localStorage.token || sessionStorage.token,

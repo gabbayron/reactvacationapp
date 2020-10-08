@@ -39,7 +39,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
 
     const handleClick = async () => {
         try {
-            await fetch(`http://localhost:1000/vacations/edit/${id}`, {
+            await fetch(`/vacations/edit/${id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: localStorage.token || sessionStorage.token,
