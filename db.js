@@ -1,17 +1,12 @@
 const mysql = require('mysql');
 
-let db;
+let db = mysql.createConnection(process.env.JAWSDB_URL || {
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'vacations_project'
+});
 
-if (process.env.JAWSDB_URL) {
-    mysql.createConnection(process.env.JAWSDB_URL)
-} else {
-    db = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'vacations_project'
-    });
-}
 
 db.connect(err => {
     if (err) return console.log(err);
