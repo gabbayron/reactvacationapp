@@ -60,7 +60,7 @@ const Vacation = ({
       }
       setTimeout(() => {
         setCounter(counter + 1)
-      }, 100);
+      }, 50);
     } catch (error) {
       throw error
     }

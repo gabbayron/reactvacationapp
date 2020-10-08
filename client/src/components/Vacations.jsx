@@ -64,7 +64,6 @@ export default function Vacations() {
             headers: { Authorization: localStorage.token || sessionStorage.token }
           });
           let allVacations = await res.json();
-          console.log(allVacations)
           setAllVacations(allVacations)
           setNotFollowedVacations(allVacations.notFollowedVacations);
           setFollowedVacations(allVacations.followedVacations)
