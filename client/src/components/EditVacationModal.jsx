@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import EditIcon from '@material-ui/icons/Edit';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from "@material-ui/core/Button";
-import { server } from '../config/index'
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -40,7 +39,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
 
     const handleClick = async () => {
         try {
-            await fetch(server + `/vacations/edit/${id}`, {
+            await fetch(  `vacations/edit/${id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: localStorage.token || sessionStorage.token,

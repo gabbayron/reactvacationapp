@@ -1,16 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { server } from '../../config/index'
 const VerifyToken = () => {
-  console.log(server)
   const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
       try {
-        let res = await fetch(server + "/auth/me", {
+        let res = await fetch("auth/me", {
           method: "GET",
           headers: { Authorization: localStorage.token || sessionStorage.token },
         });
@@ -30,11 +28,7 @@ const VerifyToken = () => {
             },
           });
           if (history.location.pathname === '/register' || history.location.pathname === '/login' || history.location.pathname === '/') {
-            if (server === "/") {
-              history.push("/")
-            } else {
               history.push("/vacations");
-            }
           }
         }
       } catch (error) {

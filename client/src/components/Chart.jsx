@@ -14,14 +14,13 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import { useEffect } from "react";
-import { server } from '../config/index'
 
 export const Chart = () => {
   const [vacations, setVacations] = useState([])
   useEffect(() => {
     (async () => {
       try {
-        let res = await fetch(server + '/vacations/chart', {
+        let res = await fetch(  'vacations/chart', {
           headers: { Authorization: localStorage.token || sessionStorage.token }
         })
 

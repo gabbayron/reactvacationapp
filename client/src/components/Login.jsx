@@ -17,7 +17,6 @@ import { useDispatch } from "react-redux";
 import LockIcon from '@material-ui/icons/Lock';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { server } from '../config/index'
 
 
 
@@ -52,7 +51,7 @@ export default function Login({ history }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch(server + "/auth/login", {
+      let res = await fetch(  "auth/login", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "content-type": "application/json" },

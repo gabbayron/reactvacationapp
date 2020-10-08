@@ -9,7 +9,6 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from "@material-ui/core/Button";
-import { server } from '../config/index'
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -38,7 +37,7 @@ export default function AddVacationModal({ counter, setCounter }) {
 
     const handleClick = async () => {
         try {
-            await fetch(server + '/vacations/add', {
+            await fetch('vacations/add', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
