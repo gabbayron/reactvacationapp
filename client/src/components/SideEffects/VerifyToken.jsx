@@ -8,7 +8,7 @@ const VerifyToken = () => {
   useEffect(() => {
     (async () => {
       try {
-        let res = await fetch("http://localhost:1000/auth/me", {
+        let res = await fetch("/auth/me", {
           method: "GET",
           headers: { Authorization: localStorage.token || sessionStorage.token },
         });
