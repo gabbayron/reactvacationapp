@@ -58,9 +58,7 @@ const Vacation = ({
         newState[index].followers = followers
         setSearchedVacations(newState)
       }
-      setTimeout(() => {
-        setCounter(counter + 1)
-      }, 50);
+      setCounter(counter + 1)
     } catch (error) {
       throw error
     }
@@ -68,7 +66,7 @@ const Vacation = ({
 
   const handleDelete = async () => {
     try {
-      await fetch(`vacations/${id}`, {
+      await fetch(`http://localhost:1000/vacations/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: localStorage.token || sessionStorage.token,
