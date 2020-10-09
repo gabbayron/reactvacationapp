@@ -29,21 +29,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
+
 }));
 
 export default function Vacations() {
@@ -75,6 +61,7 @@ export default function Vacations() {
       }
     })();
   }, [counter, user.login, user.userid]);
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -114,7 +101,7 @@ export default function Vacations() {
           />
         </Container>
         {user.role === "admin" ?
-          <Container style={{ textAlign: "center" }} maxWidth="md" >
+          <Container className={classes.cardGrid} style={{ textAlign: "center" }} maxWidth="md" >
             <AddVacationModal counter={counter} setCounter={setCounter} />
           </Container>
           : null}
