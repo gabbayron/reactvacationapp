@@ -120,7 +120,7 @@ const Vacation = ({
   return (
     <>
       <Grid item xs={12} sm={6} md={3} >
-        <Card>
+        <Card >
           {user.role === "admin" ?
             <CardHeader style={{ justifyContent: 'space-around' }} action={
               <EditVacationModal country={country} price={price}
