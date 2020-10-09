@@ -59,6 +59,7 @@ export default function AddVacationModal({ counter, setCounter }) {
         }
     }
 
+
     return (
         <div style={{ marginTop: '7px' }}>
             <Button onClick={() => setOpen(!open)} variant='contained' color='primary' >Add Flight</Button>
@@ -73,13 +74,14 @@ export default function AddVacationModal({ counter, setCounter }) {
                 BackdropProps={{
                     timeout: 500,
                 }}
+                style={{ overflow: "auto" }}
             >
                 <Fade in={open}>
-                    <div className={classes.paper}>
+                    <div className={classes.paper}  >
                         <h1 id="transition-modal-title" style={{ textAlign: "center" }}>Add Vacation :</h1>
-                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                            <Grid container >
-                                <Grid item xs={12} sm={3}>
+                        <MuiPickersUtilsProvider utils={DateFnsUtils}  >
+                            <Grid container   >
+                                <Grid xs={9} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog1"
@@ -93,7 +95,7 @@ export default function AddVacationModal({ counter, setCounter }) {
                                         }}
                                     />
                                 </Grid>
-                                <Grid item xs={12} sm={3}>
+                                <Grid xs={9} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog2"
@@ -107,20 +109,20 @@ export default function AddVacationModal({ counter, setCounter }) {
                                         }}
                                     />
                                 </Grid   >
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={9} sm={6} md={3} >
                                     <TextField label="Destination" margin="normal" onChange={e => setDestination(e.target.value)} value={destination} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={9} sm={6} md={3} >
                                     <TextField label="Country" margin="normal" onChange={e => setCountry(e.target.value)} value={country} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={9} sm={6} md={3} >
                                     <TextField type="number" label="Price" margin="normal" onChange={e => setPrice(e.target.value)} value={price} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={9} sm={6} md={3} >
                                     <TextField type="text" label="Image Source" margin="normal" onChange={e => setImgSrc(e.target.value)} value={img_src} />
                                 </Grid>
 
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={9} sm={6} md={3} >
                                     <h4>Description :</h4>
                                     <TextareaAutosize value={description} onChange={e => setDescription(e.target.value)} rowsMax={10} />
                                 </Grid>
@@ -131,9 +133,18 @@ export default function AddVacationModal({ counter, setCounter }) {
                                     disabled={!description || !destination || end_date < start_date || !img_src || !country || !price ? true : false}
                                     variant='contained'
                                     color='primary'
+                                    style={{ margin: "15px" }}
                                 >
                                     Add Flight !
                                       </Button>
+                                <Button
+                                    onClick={() => setOpen(!open)}
+                                    variant='contained'
+                                    color='primary'
+                                    style={{ margin: "15px" }}
+                                >
+                                    Cancel
+                                </Button>
                             </div>
                         </MuiPickersUtilsProvider >
                     </div>

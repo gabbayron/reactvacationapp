@@ -39,7 +39,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
 
     const handleClick = async () => {
         try {
-            await fetch(  `vacations/edit/${id}`, {
+            await fetch(`vacations/edit/${id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: localStorage.token || sessionStorage.token,
@@ -77,13 +77,14 @@ export default function EditVacationModal({ country, price, start_date, end_date
                 BackdropProps={{
                     timeout: 500,
                 }}
+                style={{ overflow: "auto" }}
             >
                 <Fade in={open}>
-                    <div className={classes.paper}>
+                    <div className={classes.paper} style={{ overflow: "scroll" }}>
                         <h1 id="transition-modal-title" style={{ textAlign: "center" }}>Edit Vacation To {eDestenation}</h1>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <Grid container >
-                                <Grid item xs={12} sm={3}>
+                                <Grid xs={12} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog1"
@@ -96,7 +97,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
                                         }}
                                     />
                                 </Grid>
-                                <Grid item xs={12} sm={3}>
+                                <Grid xs={12} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog2"
@@ -110,20 +111,20 @@ export default function EditVacationModal({ country, price, start_date, end_date
                                         }}
                                     />
                                 </Grid   >
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={12} sm={6} md={3} >
                                     <TextField label="Destination" margin="normal" onChange={e => setEdestenation(e.target.value)} value={eDestenation} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={12} sm={6} md={3} >
                                     <TextField label="Country" margin="normal" onChange={e => setEcountry(e.target.value)} value={eCountry} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={12} sm={6} md={3} >
                                     <TextField type="number" label="Price" margin="normal" onChange={e => setEprice(e.target.value)} value={ePrice} />
                                 </Grid>
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={12} sm={6} md={3} >
                                     <TextField type="text" label="Image Source" margin="normal" onChange={e => setEimgsrc(e.target.value)} value={eImgSrc} />
                                 </Grid>
 
-                                <Grid item xs={12} sm={3} >
+                                <Grid xs={12} sm={6} md={3} >
                                     <h4>Description :</h4>
                                     <TextareaAutosize value={eDescription} onChange={e => setEdescription(e.target.value)} rowsMax={10} />
                                 </Grid>
@@ -134,8 +135,18 @@ export default function EditVacationModal({ country, price, start_date, end_date
                                     disabled={!eDescription || !eDestenation || endDate < startDate || !eImgSrc || !eCountry || !ePrice ? true : false}
                                     variant='contained'
                                     color='primary'
+                                    style={{ margin: "15px" }}
                                 >
                                     Save Changes
+                                      </Button>
+
+                                <Button
+                                    onClick={() => setOpen(!open)}
+                                    variant='contained'
+                                    color='primary'
+                                    style={{ margin: "15px" }}
+                                >
+                                    Cancel
                                       </Button>
                             </div>
                         </MuiPickersUtilsProvider >
