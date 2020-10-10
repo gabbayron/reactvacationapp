@@ -56,7 +56,9 @@ const Vacation = ({
         let update = serachedVacations.find(vacation => vacation.id === id)
         let index = serachedVacations.indexOf(update)
         newState[index].followers = followers
-        setSearchedVacations(newState)
+        setTimeout(() => {
+          setSearchedVacations(newState)
+        }, 50);
       }
       setCounter(counter + 1)
     } catch (error) {
