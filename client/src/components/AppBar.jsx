@@ -58,7 +58,7 @@ const Appbar = () => {
         >
           {user.login ? "Log Out" : "Login"}
         </Button>
-        {user.login ?
+        {user.role === "admin" ?
           <Button
             color="inherit"
             component={RouterLink}

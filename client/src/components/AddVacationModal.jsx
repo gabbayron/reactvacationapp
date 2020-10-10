@@ -62,7 +62,7 @@ export default function AddVacationModal({ counter, setCounter }) {
 
     return (
         <div style={{ marginTop: '7px' }}>
-            <Button onClick={() => setOpen(!open)} variant='contained' color='primary' >Add Flight</Button>
+            <Button onClick={() => setOpen(!open)} variant='contained' color='primary' >Add Vacation</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
