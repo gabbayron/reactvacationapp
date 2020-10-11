@@ -46,13 +46,12 @@ export const Chart = () => {
   useEffect(() => {
     (async () => {
       try {
-        let res = await fetch('http://localhost:1000/vacations/chart', {
+        let res = await fetch('vacations/chart', {
           headers: { Authorization: localStorage.token || sessionStorage.token }
         })
 
         let data = await res.json()
         setVacations(data.filter(vacation => vacation.followers > 0))
-        console.log(vacations)
       } catch (error) {
         throw error
       }
