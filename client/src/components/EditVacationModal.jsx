@@ -84,7 +84,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
                         <h1 id="transition-modal-title" style={{ textAlign: "center" }}>Edit Vacation To {eDestenation}</h1>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <Grid container >
-                                <Grid xs={12} sm={6} md={3}>
+                                <Grid item xs={12} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog1"
@@ -97,7 +97,7 @@ export default function EditVacationModal({ country, price, start_date, end_date
                                         }}
                                     />
                                 </Grid>
-                                <Grid xs={12} sm={6} md={3}>
+                                <Grid item xs={12} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog2"
@@ -111,20 +111,20 @@ export default function EditVacationModal({ country, price, start_date, end_date
                                         }}
                                     />
                                 </Grid   >
-                                <Grid xs={12} sm={6} md={3} >
+                                <Grid item xs={12} sm={6} md={3} >
                                     <TextField label="Destination" margin="normal" onChange={e => setEdestenation(e.target.value)} value={eDestenation} />
                                 </Grid>
-                                <Grid xs={12} sm={6} md={3} >
+                                <Grid item xs={12} sm={6} md={3} >
                                     <TextField label="Country" margin="normal" onChange={e => setEcountry(e.target.value)} value={eCountry} />
                                 </Grid>
-                                <Grid xs={12} sm={6} md={3} >
+                                <Grid item xs={12} sm={6} md={3} >
                                     <TextField type="number" label="Price" margin="normal" onChange={e => setEprice(e.target.value)} value={ePrice} />
                                 </Grid>
-                                <Grid xs={12} sm={6} md={3} >
+                                <Grid item xs={12} sm={6} md={3} >
                                     <TextField type="text" label="Image Source" margin="normal" onChange={e => setEimgsrc(e.target.value)} value={eImgSrc} />
                                 </Grid>
 
-                                <Grid xs={12} sm={6} md={3} >
+                                <Grid item xs={12} sm={6} md={3} >
                                     <h4>Description :</h4>
                                     <TextareaAutosize value={eDescription} onChange={e => setEdescription(e.target.value)} rowsMax={10} />
                                 </Grid>

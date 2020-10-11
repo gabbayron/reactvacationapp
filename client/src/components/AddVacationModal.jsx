@@ -62,7 +62,7 @@ export default function AddVacationModal({ counter, setCounter }) {
 
     return (
         <div style={{ marginTop: '7px' }}>
-            <Button onClick={() => setOpen(!open)} variant='contained' color='primary' >Add Vacation</Button>
+            <Button onClick={() => setOpen(!open)} variant='contained' color='primary' >Add Vacations</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -81,7 +81,7 @@ export default function AddVacationModal({ counter, setCounter }) {
                         <h1 id="transition-modal-title" style={{ textAlign: "center" }}>Add Vacation :</h1>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}  >
                             <Grid container   >
-                                <Grid xs={9} sm={6} md={3}>
+                                <Grid item xs={9} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog1"
@@ -95,7 +95,7 @@ export default function AddVacationModal({ counter, setCounter }) {
                                         }}
                                     />
                                 </Grid>
-                                <Grid xs={9} sm={6} md={3}>
+                                <Grid item xs={9} sm={6} md={3}>
                                     <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog2"
@@ -109,20 +109,20 @@ export default function AddVacationModal({ counter, setCounter }) {
                                         }}
                                     />
                                 </Grid   >
-                                <Grid xs={9} sm={6} md={3} >
+                                <Grid item xs={9} sm={6} md={3} >
                                     <TextField label="Destination" margin="normal" onChange={e => setDestination(e.target.value)} value={destination} />
                                 </Grid>
-                                <Grid xs={9} sm={6} md={3} >
+                                <Grid item xs={9} sm={6} md={3} >
                                     <TextField label="Country" margin="normal" onChange={e => setCountry(e.target.value)} value={country} />
                                 </Grid>
-                                <Grid xs={9} sm={6} md={3} >
+                                <Grid item xs={9} sm={6} md={3} >
                                     <TextField type="number" label="Price" margin="normal" onChange={e => setPrice(e.target.value)} value={price} />
                                 </Grid>
-                                <Grid xs={9} sm={6} md={3} >
+                                <Grid item xs={9} sm={6} md={3} >
                                     <TextField type="text" label="Image Source" margin="normal" onChange={e => setImgSrc(e.target.value)} value={img_src} />
                                 </Grid>
 
-                                <Grid xs={9} sm={6} md={3} >
+                                <Grid item xs={9} sm={6} md={3} >
                                     <h4>Description :</h4>
                                     <TextareaAutosize value={description} onChange={e => setDescription(e.target.value)} rowsMax={10} />
                                 </Grid>
