@@ -52,6 +52,7 @@ export const Chart = () => {
 
         let data = await res.json()
         setVacations(data.filter(vacation => vacation.followers > 0))
+        console.log(vacations)
       } catch (error) {
         throw error
       }

@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
             lname: user[0].lname,
           },
           "secretkey",
-          { expiresIn: "10m" }
+          { expiresIn: "45m" }
         );
         res.status(200).json({
           access_token,
@@ -68,7 +68,7 @@ router.post("/login", async (req, res) => {
               lname: user[0].lname,
             },
             "secretkey",
-            { expiresIn: "10m" }
+            { expiresIn: "45m" }
           );
           res.status(200).json({
             access_token,
