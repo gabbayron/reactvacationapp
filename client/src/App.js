@@ -37,7 +37,7 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/vacations' component={Vacations} />
           <Route path="/chart" component={Chart} />
-          <Box m={5}>
+          <Box mt={23} mb={5}>
             <Footer />
           </Box>
         </ThemeProvider>

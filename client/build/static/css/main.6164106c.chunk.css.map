@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,+BACF,CACA,WACE,yBAA2B,CAC3B,YAAa,CACb,UACF","file":"main.6164106c.chunk.css","sourcesContent":["body{\r\n  background-color: white !important;\r\n}\r\nbody, #root{\r\n  min-height: 100% !important;\r\n  height: 100vh;\r\n  width: 100%;\r\n}"]}
